@@ -1,0 +1,72 @@
+part of 'app_pages.dart';
+
+abstract class Routes {
+  Routes._();
+  static const SplashScreen = _Paths.SplashScreen;
+  static const HomeView = _Paths.HomeView;
+  static const JazzHome = _Paths.JazzHome;
+  static const ZongHome = _Paths.ZongHome;
+  static const UfoneHome = _Paths.UfoneHome;
+  static const TelenorHome = _Paths.TelenorHome;
+  static const WaridHome = _Paths.WaridHome;
+  static const JazzCall = _Paths.JazzCall;
+  static const JazzSMS = _Paths.JazzSMS;
+  static const JazzInternet = _Paths.JazzInternet;
+  static const JazzOtherOffer = _Paths.JazzOtherOffer;
+  static const ZongCall = _Paths.ZongCall;
+  static const ZongSMS = _Paths.ZongSMS;
+  static const ZongInternet = _Paths.ZongInternet;
+  static const ZongOther = _Paths.ZongOther;
+  static const UfoneCall = _Paths.UfoneCall;
+  static const UfoneSMS = _Paths.UfoneSMS;
+  static const UfoneInternet = _Paths.UfoneInternet;
+  static const UfoneOther = _Paths.UfoneOther;
+  static const TelenorCall = _Paths.TelenorCall;
+  static const TelenorSMS = _Paths.TelenorSMS;
+  static const TelenorInternet = _Paths.TelenorInternet;
+  static const TelenorOther = _Paths.TelenorOther;
+  static const WaridCall = _Paths.WaridCall;
+  static const WaridSMS = _Paths.WaridSMS;
+  static const WaridInternet = _Paths.WaridInternet;
+  static const WaridOther = _Paths.WaridOther;
+  static const JazzViewMore = _Paths.JazzViewMore;
+  static const ZongViewMore = _Paths.ZongViewMore;
+  static const UfoneViewMore = _Paths.UfoneViewMore;
+  static const TelenorViewMore = _Paths.TelenorViewMore;
+  static const WaridViewMore = _Paths.WaridViewMore;
+}
+
+abstract class _Paths {
+  static const SplashScreen = '/SplashScreen';
+  static const HomeView = '/HomeView';
+  static const JazzHome = '/JazzHome';
+  static const ZongHome = '/ZongHome';
+  static const UfoneHome = '/UfoneHome';
+  static const TelenorHome = '/TelenorHome';
+  static const WaridHome = '/WaridHome';
+  static const JazzCall = '/JazzCall';
+  static const JazzSMS = '/JazzSMS';
+  static const JazzInternet = '/JazzInternet';
+  static const JazzOtherOffer = '/JazzOtherOffer';
+  static const ZongCall = '/ZongCall';
+  static const ZongSMS = '/ZongSMS';
+  static const ZongInternet = '/ZongInternet';
+  static const ZongOther = '/ZongOther';
+  static const UfoneCall = '/UfoneCall';
+  static const UfoneSMS = '/UfoneSMS';
+  static const UfoneInternet = '/UfoneInternet';
+  static const UfoneOther = '/UfoneOther';
+  static const TelenorCall = '/TelenorCall';
+  static const TelenorSMS = '/TelenorSMS';
+  static const TelenorInternet = '/TelenorInternet';
+  static const TelenorOther = '/TelenorOther';
+  static const WaridCall = '/WaridCall';
+  static const WaridSMS = '/WaridSMS';
+  static const WaridInternet = '/WaridInternet';
+  static const WaridOther = '/WaridOther';
+  static const JazzViewMore = '/JazzViewMore';
+  static const ZongViewMore = '/ZongViewMore';
+  static const UfoneViewMore = '/UfoneViewMore';
+  static const TelenorViewMore = '/TelenorViewMore';
+  static const WaridViewMore = '/WaridViewMore';
+}
