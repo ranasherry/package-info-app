@@ -20,6 +20,7 @@ class ZongHome extends StatelessWidget {
             },
             child: Icon(Icons.arrow_back_ios_new_outlined)),
         title: Text("Zong Offer"),
+        centerTitle: true,
       ),
       body: Container(
         margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),

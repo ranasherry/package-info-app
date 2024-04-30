@@ -14,7 +14,7 @@ class JazzSMS extends GetView<JazzCTL> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF960000),
-        title: Text("Jazz SMS Offer"),
+        title: Text("Jazz & Warid SMS Offer"),
         leading: GestureDetector(
             onTap: () {
               Get.back();

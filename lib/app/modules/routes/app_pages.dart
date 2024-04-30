@@ -1,4 +1,5 @@
 import 'package:all_network_packages/app/modules/home/bindings/jazz_binding.dart';
+import 'package:all_network_packages/app/modules/home/bindings/sim_checker_binding.dart';
 import 'package:all_network_packages/app/modules/home/bindings/telenor_binding.dart';
 import 'package:all_network_packages/app/modules/home/bindings/ufone_binding.dart';
 import 'package:all_network_packages/app/modules/home/bindings/warid_binding.dart';
@@ -9,6 +10,7 @@ import 'package:all_network_packages/app/modules/home/views/jazz_internet.dart';
 import 'package:all_network_packages/app/modules/home/views/jazz_other.dart';
 import 'package:all_network_packages/app/modules/home/views/jazz_sms.dart';
 import 'package:all_network_packages/app/modules/home/views/jazz_view_more.dart';
+import 'package:all_network_packages/app/modules/home/views/sim_checker_view.dart';
 import 'package:all_network_packages/app/modules/home/views/splash_screen.dart';
 import 'package:all_network_packages/app/modules/home/views/telenor_call.dart';
 import 'package:all_network_packages/app/modules/home/views/telenor_internet.dart';
@@ -174,5 +176,9 @@ class AppPages {
       page: () => WaridViewMore(),
       // binding: WaridBinding()
     ),
+    GetPage(
+        name: _Paths.SIMCHECKERVIEW,
+        page: () => SimCheckerView(),
+        binding: SimCheckerBinding()),
   ];
 }

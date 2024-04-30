@@ -13,13 +13,15 @@ class TelenorHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xFF008ED0),
-          leading: GestureDetector(
-              onTap: () {
-                Get.back();
-              },
-              child: Icon(Icons.arrow_back_ios_new_outlined)),
-          title: Text("Telenor Offer")),
+        backgroundColor: Color(0xFF008ED0),
+        leading: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(Icons.arrow_back_ios_new_outlined)),
+        title: Text("Telenor Offer"),
+        centerTitle: true,
+      ),
       body: Container(
         margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),
         child: Column(

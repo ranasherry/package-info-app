@@ -13,13 +13,15 @@ class WaridHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xFF001D76),
-          leading: GestureDetector(
-              onTap: () {
-                Get.back();
-              },
-              child: Icon(Icons.arrow_back_ios_new_outlined)),
-          title: Text("Warid Offer")),
+        backgroundColor: Color(0xFF001D76),
+        leading: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(Icons.arrow_back_ios_new_outlined)),
+        title: Text("Warid Offer"),
+        centerTitle: true,
+      ),
       body: Container(
         margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),
         child: Column(

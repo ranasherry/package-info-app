@@ -19,7 +19,8 @@ class JazzHome extends StatelessWidget {
               Get.back();
             },
             child: Icon(Icons.arrow_back_ios_new_outlined)),
-        title: Text("Jazz Offer"),
+        title: Text("Jazz & Warid Offer"),
+        centerTitle: true,
       ),
       body: Container(
         margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),
