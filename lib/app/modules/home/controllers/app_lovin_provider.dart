@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+
 import '../../utills/app_strings.dart';
 
 class AppLovinProvider {
@@ -32,7 +33,9 @@ class AppLovinProvider {
   var isWidgetMRecShowing = false;
 
   void init() {
-    initializePlugin();
+    if (kReleaseMode) {
+      initializePlugin();
+    }
   }
 
   Future<void> initializePlugin() async {
@@ -48,8 +51,8 @@ class AppLovinProvider {
       attachAdListeners();
       AppLovinMAX.loadInterstitial(_interstitial_ad_unit_id);
       //  AppLovinMAX.createMRec(AppStrings.MAX_MREC_ID, AdViewPosition.centered);
-      AppLovinMAX.createBanner(
-          AppStrings.MAX_BANNER_ID, AdViewPosition.bottomCenter);
+      // AppLovinMAX.createBanner(
+      //     AppStrings.MAX_BANNER_ID, AdViewPosition.bottomCenter);
     } else {
       print("SDK null");
     }

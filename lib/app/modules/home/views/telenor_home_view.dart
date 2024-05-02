@@ -1,10 +1,12 @@
+import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:all_network_packages/app/modules/routes/app_pages.dart';
+import 'package:all_network_packages/app/modules/utills/app_strings.dart';
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../utills/images.dart';
 import '../../utills/size_config.dart';
-import '../controllers/applovin_provider.dart';
 
 class TelenorHome extends StatelessWidget {
   const TelenorHome({super.key});
@@ -13,15 +15,17 @@ class TelenorHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xFF008ED0),
-          leading: GestureDetector(
-              onTap: () {
-                Get.back();
-              },
-              child: Icon(Icons.arrow_back_ios_new_outlined)),
-          title: Text("Telenor Offer")),
+        backgroundColor: Color(0xFF008ED0),
+        leading: GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(Icons.arrow_back_ios_new_outlined)),
+        title: Text("Telenor Offer"),
+        centerTitle: true,
+      ),
       body: Container(
-        margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),
+        // margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),
         child: Column(
           children: [
             Container(
@@ -55,7 +59,31 @@ class TelenorHome extends StatelessWidget {
                   Get.toNamed(Routes.TelenorOther);
                   AppLovinProvider.instance.showInterstitial();
                 },
-                child: telenoroffer(Icons.more_horiz_outlined, "Other Offer"))
+                child: telenoroffer(Icons.more_horiz_outlined, "Other Offer")),
+            Spacer(),
+            Container(
+              height: 60,
+              // color: Colors.amber,
+              child: Center(
+                child: MaxAdView(
+                    adUnitId: AppStrings.MAX_BANNER_ID,
+                    adFormat: AdFormat.banner,
+                    listener: AdViewAdListener(onAdLoadedCallback: (ad) {
+                      print('Banner widget ad loaded from ' + ad.networkName);
+                    }, onAdLoadFailedCallback: (adUnitId, error) {
+                      print('Banner widget ad failed to load with error code ' +
+                          error.code.toString() +
+                          ' and message: ' +
+                          error.message);
+                    }, onAdClickedCallback: (ad) {
+                      print('Banner widget ad clicked');
+                    }, onAdExpandedCallback: (ad) {
+                      print('Banner widget ad expanded');
+                    }, onAdCollapsedCallback: (ad) {
+                      print('Banner widget ad collapsed');
+                    })),
+              ),
+            ),
           ],
         ),
       ),

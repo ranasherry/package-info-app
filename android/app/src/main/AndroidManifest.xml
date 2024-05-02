@@ -4,7 +4,8 @@
    <application
         android:label="All Network Packages"
         android:name="${applicationName}"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/launcher_icon"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -31,6 +32,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+             <meta-data
+                android:name="com.google.firebase.messaging.default_notification_channel_id"
+                android:value="pushnotificationapp"/>
     </application>
     <!-- Provide required visibility configuration for API level 30 and above -->
 <queries>

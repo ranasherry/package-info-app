@@ -1,7 +1,9 @@
-import 'package:all_network_packages/app/modules/home/controllers/applovin_provider.dart';
+import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:all_network_packages/app/modules/routes/app_pages.dart';
+import 'package:all_network_packages/app/modules/utills/app_strings.dart';
 import 'package:all_network_packages/app/modules/utills/images.dart';
 import 'package:all_network_packages/app/modules/utills/size_config.dart';
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,33 +37,110 @@ class HomeView extends StatelessWidget {
         Center(
           child: Container(
             margin: EdgeInsets.only(
-                top: SizeConfig.blockSizeVertical * 1,
-                bottom: SizeConfig.bannerMargin),
+              top: SizeConfig.blockSizeVertical * 1,
+              // bottom: SizeConfig.bannerMargin
+            ),
             child: Column(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Get.toNamed(Routes.JazzHome);
-                    AppLovinProvider.instance.showInterstitial();
-                  },
-                  child: networks("Jazz", Color(0xFF960000),
-                      Colors.red.shade200, Colors.white, AppImages.jazz),
+                Container(
+                  height: SizeConfig.blockSizeVertical * 16,
+                  width: SizeConfig.blockSizeHorizontal * 95,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                          SizeConfig.blockSizeHorizontal * 2),
+                      gradient: LinearGradient(
+                          colors: [
+                            Colors.green.shade300,
+                            Colors.green.shade200
+                          ],
+                          // colors: [Color(0xFF001D76), Colors.blue.shade200],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter)),
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        left: SizeConfig.blockSizeHorizontal * 3,
+                        right: SizeConfig.blockSizeHorizontal * 2,
+                        bottom: SizeConfig.blockSizeVertical * 0.5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text(
+                          "Sim Checker",
+                          style: TextStyle(
+                              fontSize: SizeConfig.blockSizeHorizontal * 5,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          "To find the total number of SIM's registered to your CNIC,",
+                          style: TextStyle(
+                              fontSize: SizeConfig.blockSizeHorizontal * 4,
+                              color: Colors.white),
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: GestureDetector(
+                            onTap: () {
+                              Get.toNamed(Routes.SIMCHECKERVIEW);
+                            },
+                            child: Container(
+                              height: SizeConfig.blockSizeVertical * 4,
+                              width: SizeConfig.blockSizeHorizontal * 35,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(
+                                      SizeConfig.blockSizeHorizontal * 7)),
+                              child: Center(
+                                child: Text(
+                                  "Check Number of Sims >>",
+                                  style: TextStyle(
+                                      fontSize:
+                                          SizeConfig.blockSizeHorizontal * 2.5,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.blue.shade600),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
+                // GestureDetector(
+                //   onTap: () {
+                //     Get.toNamed(Routes.JazzHome);
+                //     AppLovinProvider.instance.showInterstitial();
+                //   },
+                //   child: networks("Jazz", Color(0xFF001D76),
+                //       Colors.blue.shade200, Colors.white, AppImages.jazz, 1.09),
+                // ),
                 GestureDetector(
                   onTap: () {
                     Get.toNamed(Routes.ZongHome);
                     AppLovinProvider.instance.showInterstitial();
                   },
-                  child: networks("Zong", Color(0xFF80B72F),
-                      Colors.green.shade200, Colors.white, AppImages.zong),
+                  child: networks(
+                      "Zong",
+                      Color(0xFF80B72F),
+                      Colors.green.shade200,
+                      Colors.white,
+                      AppImages.zong,
+                      1.09),
                 ),
                 GestureDetector(
                   onTap: () {
                     Get.toNamed(Routes.UfoneHome);
                     AppLovinProvider.instance.showInterstitial();
                   },
-                  child: networks("Ufone", Color(0xFFF25500),
-                      Colors.orange.shade200, Colors.white, AppImages.ufone),
+                  child: networks(
+                      "Ufone",
+                      Color(0xFFF25500),
+                      Colors.orange.shade200,
+                      Colors.white,
+                      AppImages.ufone,
+                      1.09),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -73,15 +152,47 @@ class HomeView extends StatelessWidget {
                       Color(0xFF008ED0),
                       Colors.lightBlue.shade200,
                       Colors.white,
-                      AppImages.telenor),
+                      AppImages.telenor,
+                      1.09),
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.toNamed(Routes.WaridHome);
+                    Get.toNamed(Routes.JazzHome);
                     AppLovinProvider.instance.showInterstitial();
                   },
-                  child: networks("Warid", Color(0xFF001D76),
-                      Colors.blue.shade200, Colors.white, AppImages.warid),
+                  child: networks(
+                      "Jazz & Warid",
+                      Color(0xFF960000),
+                      Colors.red.shade200,
+                      Colors.white,
+                      AppImages.jazz_warid,
+                      3),
+                ),
+                Spacer(),
+                Container(
+                  height: 60,
+                  // color: Colors.amber,
+                  child: Center(
+                    child: MaxAdView(
+                        adUnitId: AppStrings.MAX_BANNER_ID,
+                        adFormat: AdFormat.banner,
+                        listener: AdViewAdListener(onAdLoadedCallback: (ad) {
+                          print(
+                              'Banner widget ad loaded from ' + ad.networkName);
+                        }, onAdLoadFailedCallback: (adUnitId, error) {
+                          print(
+                              'Banner widget ad failed to load with error code ' +
+                                  error.code.toString() +
+                                  ' and message: ' +
+                                  error.message);
+                        }, onAdClickedCallback: (ad) {
+                          print('Banner widget ad clicked');
+                        }, onAdExpandedCallback: (ad) {
+                          print('Banner widget ad expanded');
+                        }, onAdCollapsedCallback: (ad) {
+                          print('Banner widget ad collapsed');
+                        })),
+                  ),
                 ),
               ],
             ),
@@ -91,8 +202,8 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  Container networks(
-      String text, Color color1, Color color2, Color color3, String image) {
+  Container networks(String text, Color color1, Color color2, Color color3,
+      String image, double scale) {
     return Container(
       margin: EdgeInsets.only(
         top: SizeConfig.blockSizeVertical * 1.5,
@@ -106,32 +217,33 @@ class HomeView extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           )),
-      child: Padding(
-        padding: EdgeInsets.only(
-            right: SizeConfig.blockSizeHorizontal * 3,
-            left: SizeConfig.blockSizeHorizontal * 2),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset(
-              image,
-              scale: 1.09,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Image.asset(
+            image,
+            scale: scale,
+          ),
+          // horizontalSpace(SizeConfig.blockSizeHorizontal * 20),
+          Padding(
+            padding: EdgeInsets.only(
+              right: SizeConfig.blockSizeHorizontal * 10,
             ),
-            horizontalSpace(SizeConfig.blockSizeHorizontal * 20),
-            Text(
+            child: Text(
               text,
               style: TextStyle(
                 fontSize: SizeConfig.blockSizeHorizontal * 5,
                 color: Colors.white,
               ),
             ),
-            Spacer(),
-            Icon(
-              Icons.arrow_forward_ios_outlined,
-              color: color3,
-            )
-          ],
-        ),
+          ),
+          // Spacer(),
+
+          Icon(
+            Icons.arrow_forward_ios_outlined,
+            color: color3,
+          )
+        ],
       ),
     );
   }

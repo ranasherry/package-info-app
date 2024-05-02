@@ -34,6 +34,7 @@ abstract class Routes {
   static const UfoneViewMore = _Paths.UfoneViewMore;
   static const TelenorViewMore = _Paths.TelenorViewMore;
   static const WaridViewMore = _Paths.WaridViewMore;
+  static const SIMCHECKERVIEW = _Paths.SIMCHECKERVIEW;
 }
 
 abstract class _Paths {
@@ -69,4 +70,5 @@ abstract class _Paths {
   static const UfoneViewMore = '/UfoneViewMore';
   static const TelenorViewMore = '/TelenorViewMore';
   static const WaridViewMore = '/WaridViewMore';
+  static const SIMCHECKERVIEW = '/SIMCHECKERVIEW';
 }

@@ -1,10 +1,11 @@
+import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:all_network_packages/app/modules/routes/app_pages.dart';
+import 'package:all_network_packages/app/modules/utills/app_strings.dart';
 import 'package:all_network_packages/app/modules/utills/images.dart';
 import 'package:all_network_packages/app/modules/utills/size_config.dart';
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../controllers/applovin_provider.dart';
 
 class JazzHome extends StatelessWidget {
   const JazzHome({super.key});
@@ -19,10 +20,11 @@ class JazzHome extends StatelessWidget {
               Get.back();
             },
             child: Icon(Icons.arrow_back_ios_new_outlined)),
-        title: Text("Jazz Offer"),
+        title: Text("Jazz & Warid Offer"),
+        centerTitle: true,
       ),
       body: Container(
-        margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),
+        // margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),
         child: Column(
           children: [
             Container(
@@ -56,7 +58,31 @@ class JazzHome extends StatelessWidget {
                   Get.toNamed(Routes.JazzOtherOffer);
                   AppLovinProvider.instance.showInterstitial();
                 },
-                child: jazzoffer(Icons.more_horiz_outlined, "Other Offer"))
+                child: jazzoffer(Icons.more_horiz_outlined, "Other Offer")),
+            Spacer(),
+            Container(
+              height: 60,
+              // color: Colors.amber,
+              child: Center(
+                child: MaxAdView(
+                    adUnitId: AppStrings.MAX_BANNER_ID,
+                    adFormat: AdFormat.banner,
+                    listener: AdViewAdListener(onAdLoadedCallback: (ad) {
+                      print('Banner widget ad loaded from ' + ad.networkName);
+                    }, onAdLoadFailedCallback: (adUnitId, error) {
+                      print('Banner widget ad failed to load with error code ' +
+                          error.code.toString() +
+                          ' and message: ' +
+                          error.message);
+                    }, onAdClickedCallback: (ad) {
+                      print('Banner widget ad clicked');
+                    }, onAdExpandedCallback: (ad) {
+                      print('Banner widget ad expanded');
+                    }, onAdCollapsedCallback: (ad) {
+                      print('Banner widget ad collapsed');
+                    })),
+              ),
+            ),
           ],
         ),
       ),

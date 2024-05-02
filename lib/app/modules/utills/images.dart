@@ -1,5 +1,6 @@
 class AppImages {
   static const jazz = "assets/icons/jazz.png";
+  static const jazz_warid = "assets/icons/jazz_warid.png";
   static const telenor = "assets/icons/telenor.png";
   static const ufone = "assets/icons/ufone.png";
   static const zong = "assets/icons/zong.png";
