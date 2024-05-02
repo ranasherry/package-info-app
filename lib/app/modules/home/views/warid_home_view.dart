@@ -1,10 +1,10 @@
+import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:all_network_packages/app/modules/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../utills/images.dart';
 import '../../utills/size_config.dart';
-import '../controllers/applovin_provider.dart';
 
 class WaridHome extends StatelessWidget {
   const WaridHome({super.key});

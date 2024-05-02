@@ -1,11 +1,10 @@
-import 'package:all_network_packages/app/modules/home/controllers/jazz_ctl.dart';
+import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:all_network_packages/app/modules/home/controllers/warid_ctl.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../routes/app_pages.dart';
 import '../../utills/size_config.dart';
-import '../controllers/applovin_provider.dart';
 
 class WaridOther extends GetView<WaridCTL> {
   const WaridOther({super.key});

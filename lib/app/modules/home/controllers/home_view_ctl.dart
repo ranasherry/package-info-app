@@ -1,9 +1,9 @@
+import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../utills/app_strings.dart';
-import 'applovin_provider.dart';
 
 class HomeViewCTL extends GetxController with WidgetsBindingObserver {
   @override

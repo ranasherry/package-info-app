@@ -1,4 +1,6 @@
 import 'package:all_network_packages/app/modules/home/controllers/zong_ctl.dart';
+import 'package:all_network_packages/app/modules/utills/app_strings.dart';
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +22,7 @@ class ZongViewMore extends GetView<ZongCTL> {
             child: Icon(Icons.arrow_back_ios_outlined)),
       ),
       body: Container(
-        margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),
+        // margin: EdgeInsets.only(bottom: SizeConfig.bannerMargin),
         child: Center(
           child: Column(
             children: [
@@ -208,6 +210,31 @@ class ZongViewMore extends GetView<ZongCTL> {
                       ),
                     ],
                   ),
+                ),
+              ),
+              Spacer(),
+              Container(
+                height: 60,
+                // color: Colors.amber,
+                child: Center(
+                  child: MaxAdView(
+                      adUnitId: AppStrings.MAX_BANNER_ID,
+                      adFormat: AdFormat.banner,
+                      listener: AdViewAdListener(onAdLoadedCallback: (ad) {
+                        print('Banner widget ad loaded from ' + ad.networkName);
+                      }, onAdLoadFailedCallback: (adUnitId, error) {
+                        print(
+                            'Banner widget ad failed to load with error code ' +
+                                error.code.toString() +
+                                ' and message: ' +
+                                error.message);
+                      }, onAdClickedCallback: (ad) {
+                        print('Banner widget ad clicked');
+                      }, onAdExpandedCallback: (ad) {
+                        print('Banner widget ad expanded');
+                      }, onAdCollapsedCallback: (ad) {
+                        print('Banner widget ad collapsed');
+                      })),
                 ),
               ),
             ],

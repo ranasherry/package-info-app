@@ -1,7 +1,9 @@
-import 'package:all_network_packages/app/modules/home/controllers/applovin_provider.dart';
+import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:all_network_packages/app/modules/routes/app_pages.dart';
+import 'package:all_network_packages/app/modules/utills/app_strings.dart';
 import 'package:all_network_packages/app/modules/utills/images.dart';
 import 'package:all_network_packages/app/modules/utills/size_config.dart';
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,8 +37,9 @@ class HomeView extends StatelessWidget {
         Center(
           child: Container(
             margin: EdgeInsets.only(
-                top: SizeConfig.blockSizeVertical * 1,
-                bottom: SizeConfig.bannerMargin),
+              top: SizeConfig.blockSizeVertical * 1,
+              // bottom: SizeConfig.bannerMargin
+            ),
             child: Column(
               children: [
                 Container(
@@ -46,7 +49,11 @@ class HomeView extends StatelessWidget {
                       borderRadius: BorderRadius.circular(
                           SizeConfig.blockSizeHorizontal * 2),
                       gradient: LinearGradient(
-                          colors: [Color(0xFF001D76), Colors.blue.shade200],
+                          colors: [
+                            Colors.green.shade300,
+                            Colors.green.shade200
+                          ],
+                          // colors: [Color(0xFF001D76), Colors.blue.shade200],
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter)),
                   child: Padding(
@@ -160,6 +167,32 @@ class HomeView extends StatelessWidget {
                       Colors.white,
                       AppImages.jazz_warid,
                       3),
+                ),
+                Spacer(),
+                Container(
+                  height: 60,
+                  // color: Colors.amber,
+                  child: Center(
+                    child: MaxAdView(
+                        adUnitId: AppStrings.MAX_BANNER_ID,
+                        adFormat: AdFormat.banner,
+                        listener: AdViewAdListener(onAdLoadedCallback: (ad) {
+                          print(
+                              'Banner widget ad loaded from ' + ad.networkName);
+                        }, onAdLoadFailedCallback: (adUnitId, error) {
+                          print(
+                              'Banner widget ad failed to load with error code ' +
+                                  error.code.toString() +
+                                  ' and message: ' +
+                                  error.message);
+                        }, onAdClickedCallback: (ad) {
+                          print('Banner widget ad clicked');
+                        }, onAdExpandedCallback: (ad) {
+                          print('Banner widget ad expanded');
+                        }, onAdCollapsedCallback: (ad) {
+                          print('Banner widget ad collapsed');
+                        })),
+                  ),
                 ),
               ],
             ),
