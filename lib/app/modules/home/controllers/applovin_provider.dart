@@ -32,7 +32,8 @@ class AppLovinProvider {
   var isWidgetMRecShowing = false;
 
   void init() {
-    if (kReleaseMode) initializePlugin();
+    // if (kReleaseMode)
+    initializePlugin();
   }
 
   Future<void> initializePlugin() async {
