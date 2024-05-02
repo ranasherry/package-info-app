@@ -12,4 +12,5 @@ class AppImages {
   static const warid_home = "assets/icons/warid_home.jpg";
   static const splashScreen = "assets/icons/main_icon.png";
   static const backGround = "assets/icons/b1.jpg";
+  static const sim_card = "assets/icons/sim_card.png";
 }

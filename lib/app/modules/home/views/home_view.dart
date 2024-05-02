@@ -4,6 +4,7 @@ import 'package:all_network_packages/app/modules/utills/app_strings.dart';
 import 'package:all_network_packages/app/modules/utills/images.dart';
 import 'package:all_network_packages/app/modules/utills/size_config.dart';
 import 'package:applovin_max/applovin_max.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,13 +19,23 @@ class HomeView extends StatelessWidget {
         // elevation: 1,
         backgroundColor: Color(0xFF760000),
         centerTitle: true,
-        title: Padding(
-          padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),
-          child: Text(
-            "All Network Packages",
-            style: TextStyle(fontSize: SizeConfig.blockSizeHorizontal * 6),
-          ),
+        title: Text(
+          "All Network Packages",
+          style: TextStyle(
+              fontSize: SizeConfig.blockSizeHorizontal * 6,
+              fontWeight: FontWeight.bold),
         ),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: SizeConfig.blockSizeHorizontal * 2),
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.settings_sharp,
+              ),
+            ),
+          )
+        ],
       ),
       body: Stack(children: [
         Container(
@@ -48,62 +59,81 @@ class HomeView extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(
                           SizeConfig.blockSizeHorizontal * 2),
-                      gradient: LinearGradient(
-                          colors: [
-                            Colors.green.shade300,
-                            Colors.green.shade200
-                          ],
-                          // colors: [Color(0xFF001D76), Colors.blue.shade200],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter)),
+                      color: Color(0xFF3C8DBC)
+                      // gradient: LinearGradient(
+                      //     colors: [
+                      //       Colors.green.shade900,
+                      //       Colors.green.shade900
+                      //     ],
+                      //     // colors: [Color(0xFF001D76), Colors.blue.shade200],
+                      //     begin: Alignment.topCenter,
+                      //     end: Alignment.bottomCenter)
+                      ),
                   child: Padding(
                     padding: EdgeInsets.only(
                         left: SizeConfig.blockSizeHorizontal * 3,
                         right: SizeConfig.blockSizeHorizontal * 2,
                         bottom: SizeConfig.blockSizeVertical * 0.5),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    child: Stack(
+                      // crossAxisAlignment: CrossAxisAlignment.start,
+                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text(
-                          "Sim Checker",
-                          style: TextStyle(
-                              fontSize: SizeConfig.blockSizeHorizontal * 5,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                        Container(
+                          child: Image.asset(
+                            AppImages.sim_card,
+                          ),
                         ),
-                        Text(
-                          "To find the total number of SIM's registered to your CNIC,",
-                          style: TextStyle(
-                              fontSize: SizeConfig.blockSizeHorizontal * 4,
-                              color: Colors.white),
+                        Container(
+                          height: SizeConfig.blockSizeVertical * 16,
+                          width: SizeConfig.blockSizeHorizontal * 95,
+                          color: Color(0xFF3C8DBC).withOpacity(0.7),
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: GestureDetector(
-                            onTap: () {
-                              Get.toNamed(Routes.SIMCHECKERVIEW);
-                            },
-                            child: Container(
-                              height: SizeConfig.blockSizeVertical * 4,
-                              width: SizeConfig.blockSizeHorizontal * 35,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(
-                                      SizeConfig.blockSizeHorizontal * 7)),
-                              child: Center(
-                                child: Text(
-                                  "Check Number of Sims >>",
-                                  style: TextStyle(
-                                      fontSize:
-                                          SizeConfig.blockSizeHorizontal * 2.5,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.blue.shade600),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              "SIM CHECKER",
+                              style: TextStyle(
+                                  fontSize: SizeConfig.blockSizeHorizontal * 5,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              "To find the total number of SIM's registered to your CNIC,",
+                              style: TextStyle(
+                                  fontSize: SizeConfig.blockSizeHorizontal * 4,
+                                  color: Colors.white),
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Get.toNamed(Routes.SIMCHECKERVIEW);
+                                },
+                                child: Container(
+                                  height: SizeConfig.blockSizeVertical * 4,
+                                  width: SizeConfig.blockSizeHorizontal * 35,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(
+                                          SizeConfig.blockSizeHorizontal * 7)),
+                                  child: Center(
+                                    child: Text(
+                                      "Check Number of Sims >>",
+                                      style: TextStyle(
+                                          fontSize:
+                                              SizeConfig.blockSizeHorizontal *
+                                                  2.5,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.blue.shade700),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ),
+                          ],
+                        )
                       ],
                     ),
                   ),
