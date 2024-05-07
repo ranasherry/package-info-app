@@ -20,6 +20,7 @@ class ZongSMS extends GetView<ZongCTL> {
         centerTitle: true,
         leading: GestureDetector(
             onTap: () {
+              AppLovinProvider.instance.showInterstitial();
               Get.back();
             },
             child: Icon(Icons.arrow_back_ios_outlined)),

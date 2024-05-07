@@ -1,3 +1,4 @@
+import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:all_network_packages/app/modules/home/controllers/zong_ctl.dart';
 import 'package:all_network_packages/app/modules/utills/app_strings.dart';
 import 'package:applovin_max/applovin_max.dart';
@@ -17,6 +18,7 @@ class ZongViewMore extends GetView<ZongCTL> {
         title: Text("Get Sim Packages"),
         leading: GestureDetector(
             onTap: () {
+              AppLovinProvider.instance.showInterstitial();
               Get.back();
             },
             child: Icon(Icons.arrow_back_ios_outlined)),
@@ -27,8 +29,8 @@ class ZongViewMore extends GetView<ZongCTL> {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2),
-                height: SizeConfig.blockSizeVertical * 60,
+                margin: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 1),
+                height: SizeConfig.blockSizeVertical * 50,
                 width: SizeConfig.blockSizeHorizontal * 96,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -42,7 +44,7 @@ class ZongViewMore extends GetView<ZongCTL> {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(
-                            top: SizeConfig.blockSizeVertical * 4),
+                            top: SizeConfig.blockSizeVertical * 2),
                         child: Row(
                           children: [
                             Expanded(
@@ -194,7 +196,7 @@ class ZongViewMore extends GetView<ZongCTL> {
                         },
                         child: Container(
                           margin: EdgeInsets.only(
-                              top: SizeConfig.blockSizeVertical * 2),
+                              top: SizeConfig.blockSizeVertical * 1),
                           height: SizeConfig.blockSizeVertical * 7,
                           width: SizeConfig.blockSizeHorizontal * 80,
                           decoration: BoxDecoration(
@@ -212,28 +214,26 @@ class ZongViewMore extends GetView<ZongCTL> {
                   ),
                 ),
               ),
-              Spacer(),
+              verticalSpace(SizeConfig.blockSizeVertical * 1),
               Container(
-                height: 60,
                 // color: Colors.amber,
                 child: Center(
                   child: MaxAdView(
-                      adUnitId: AppStrings.MAX_BANNER_ID,
-                      adFormat: AdFormat.banner,
+                      adUnitId: AppStrings.MAX_MREC_ID,
+                      adFormat: AdFormat.mrec,
                       listener: AdViewAdListener(onAdLoadedCallback: (ad) {
-                        print('Banner widget ad loaded from ' + ad.networkName);
+                        print('Mrec widget ad loaded from ' + ad.networkName);
                       }, onAdLoadFailedCallback: (adUnitId, error) {
-                        print(
-                            'Banner widget ad failed to load with error code ' +
-                                error.code.toString() +
-                                ' and message: ' +
-                                error.message);
+                        print('Mrec widget ad failed to load with error code ' +
+                            error.code.toString() +
+                            ' and message: ' +
+                            error.message);
                       }, onAdClickedCallback: (ad) {
-                        print('Banner widget ad clicked');
+                        print('Mrec widget ad clicked');
                       }, onAdExpandedCallback: (ad) {
-                        print('Banner widget ad expanded');
+                        print('Mrec widget ad expanded');
                       }, onAdCollapsedCallback: (ad) {
-                        print('Banner widget ad collapsed');
+                        print('Mrec widget ad collapsed');
                       })),
                 ),
               ),

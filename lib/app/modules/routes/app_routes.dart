@@ -35,6 +35,9 @@ abstract class Routes {
   static const TelenorViewMore = _Paths.TelenorViewMore;
   static const WaridViewMore = _Paths.WaridViewMore;
   static const SIMCHECKERVIEW = _Paths.SIMCHECKERVIEW;
+  static const SETTINGSVIEW = _Paths.SETTINGSVIEW;
+  static const SUBSIMCHECKERVIEW = _Paths.SUBSIMCHECKERVIEW;
+  static const CNICCHECKERVIEW = _Paths.CNICCHECKERVIEW;
 }
 
 abstract class _Paths {
@@ -71,4 +74,7 @@ abstract class _Paths {
   static const TelenorViewMore = '/TelenorViewMore';
   static const WaridViewMore = '/WaridViewMore';
   static const SIMCHECKERVIEW = '/SIMCHECKERVIEW';
+  static const SETTINGSVIEW = '/SETTINGSVIEW';
+  static const SUBSIMCHECKERVIEW = '/SUBSIMCHECKERVIEW';
+  static const CNICCHECKERVIEW = '/CNICCHECKERVIEW';
 }

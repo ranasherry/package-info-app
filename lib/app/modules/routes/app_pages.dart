@@ -1,5 +1,6 @@
 import 'package:all_network_packages/app/modules/home/bindings/jazz_binding.dart';
-import 'package:all_network_packages/app/modules/home/bindings/sim_checker_binding.dart';
+import 'package:all_network_packages/app/modules/home/bindings/settings_binding.dart';
+import 'package:all_network_packages/app/modules/sim_checker/binding/sim_checker_binding.dart';
 import 'package:all_network_packages/app/modules/home/bindings/telenor_binding.dart';
 import 'package:all_network_packages/app/modules/home/bindings/ufone_binding.dart';
 import 'package:all_network_packages/app/modules/home/bindings/warid_binding.dart';
@@ -10,7 +11,9 @@ import 'package:all_network_packages/app/modules/home/views/jazz_internet.dart';
 import 'package:all_network_packages/app/modules/home/views/jazz_other.dart';
 import 'package:all_network_packages/app/modules/home/views/jazz_sms.dart';
 import 'package:all_network_packages/app/modules/home/views/jazz_view_more.dart';
-import 'package:all_network_packages/app/modules/home/views/sim_checker_view.dart';
+import 'package:all_network_packages/app/modules/home/views/settings_view.dart';
+import 'package:all_network_packages/app/modules/sim_checker/views/cnic_checker_view.dart';
+import 'package:all_network_packages/app/modules/sim_checker/views/sim_checker_view.dart';
 import 'package:all_network_packages/app/modules/home/views/splash_screen.dart';
 import 'package:all_network_packages/app/modules/home/views/telenor_call.dart';
 import 'package:all_network_packages/app/modules/home/views/telenor_internet.dart';
@@ -32,6 +35,7 @@ import 'package:all_network_packages/app/modules/home/views/zong_home_view.dart'
 import 'package:all_network_packages/app/modules/home/views/zong_internet.dart';
 import 'package:all_network_packages/app/modules/home/views/zong_other.dart';
 import 'package:all_network_packages/app/modules/home/views/zong_sms.dart';
+import 'package:all_network_packages/app/modules/sim_checker/views/sub_sim_checker_view.dart';
 import 'package:get/get.dart';
 
 import '../home/bindings/home_view_binding.dart';
@@ -180,5 +184,19 @@ class AppPages {
         name: _Paths.SIMCHECKERVIEW,
         page: () => SimCheckerView(),
         binding: SimCheckerBinding()),
+    GetPage(
+        name: _Paths.SETTINGSVIEW,
+        page: () => SettingsView(),
+        binding: SettingsBinding()),
+    GetPage(
+      name: _Paths.SUBSIMCHECKERVIEW,
+      page: () => SubSimCheckerView(),
+      // binding:
+    ),
+    GetPage(
+      name: _Paths.CNICCHECKERVIEW,
+      page: () => CnicCheckerView(),
+      // binding:
+    ),
   ];
 }

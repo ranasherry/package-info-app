@@ -1,11 +1,9 @@
 import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
-import 'package:all_network_packages/app/modules/home/controllers/sim_checker_ctl.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
-class SimCheckerView extends GetView<SimCheckerCTL> {
-  const SimCheckerView({super.key});
+class CnicCheckerView extends StatelessWidget {
+  const CnicCheckerView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +16,8 @@ class SimCheckerView extends GetView<SimCheckerCTL> {
               Get.back();
             },
             child: Icon(Icons.arrow_back_ios_new_outlined)),
-        title: Text("Sim Checker"),
+        title: Text("CNIC Checker"),
         centerTitle: true,
-      ),
-      body: WebViewWidget(
-        controller: controller.myweb,
       ),
     );
   }

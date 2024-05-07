@@ -18,6 +18,7 @@ class ZongHome extends StatelessWidget {
         backgroundColor: Color(0xFF80B72F),
         leading: GestureDetector(
             onTap: () {
+              AppLovinProvider.instance.showInterstitial();
               Get.back();
             },
             child: Icon(Icons.arrow_back_ios_new_outlined)),
@@ -29,7 +30,7 @@ class ZongHome extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: SizeConfig.blockSizeVertical * 20,
+              height: SizeConfig.blockSizeVertical * 15,
               width: SizeConfig.screenWidth,
               child: Image.asset(
                 AppImages.zong_home,
@@ -60,30 +61,53 @@ class ZongHome extends StatelessWidget {
                   AppLovinProvider.instance.showInterstitial();
                 },
                 child: zongoffer(Icons.more_horiz_outlined, "Other Offer")),
-            Spacer(),
+            verticalSpace(SizeConfig.blockSizeVertical * 1),
             Container(
-              height: 60,
               // color: Colors.amber,
               child: Center(
                 child: MaxAdView(
-                    adUnitId: AppStrings.MAX_BANNER_ID,
-                    adFormat: AdFormat.banner,
+                    adUnitId: AppStrings.MAX_MREC_ID,
+                    adFormat: AdFormat.mrec,
                     listener: AdViewAdListener(onAdLoadedCallback: (ad) {
-                      print('Banner widget ad loaded from ' + ad.networkName);
+                      print('Mrec widget ad loaded from ' + ad.networkName);
                     }, onAdLoadFailedCallback: (adUnitId, error) {
-                      print('Banner widget ad failed to load with error code ' +
+                      print('Mrec widget ad failed to load with error code ' +
                           error.code.toString() +
                           ' and message: ' +
                           error.message);
                     }, onAdClickedCallback: (ad) {
-                      print('Banner widget ad clicked');
+                      print('Mrec widget ad clicked');
                     }, onAdExpandedCallback: (ad) {
-                      print('Banner widget ad expanded');
+                      print('Mrec widget ad expanded');
                     }, onAdCollapsedCallback: (ad) {
-                      print('Banner widget ad collapsed');
+                      print('Mrec widget ad collapsed');
                     })),
               ),
             ),
+            // Spacer(),
+            // Container(
+            //   height: 60,
+            //   // color: Colors.amber,
+            //   child: Center(
+            //     child: MaxAdView(
+            //         adUnitId: AppStrings.MAX_BANNER_ID,
+            //         adFormat: AdFormat.banner,
+            //         listener: AdViewAdListener(onAdLoadedCallback: (ad) {
+            //           print('Banner widget ad loaded from ' + ad.networkName);
+            //         }, onAdLoadFailedCallback: (adUnitId, error) {
+            //           print('Banner widget ad failed to load with error code ' +
+            //               error.code.toString() +
+            //               ' and message: ' +
+            //               error.message);
+            //         }, onAdClickedCallback: (ad) {
+            //           print('Banner widget ad clicked');
+            //         }, onAdExpandedCallback: (ad) {
+            //           print('Banner widget ad expanded');
+            //         }, onAdCollapsedCallback: (ad) {
+            //           print('Banner widget ad collapsed');
+            //         })),
+            //   ),
+            // ),
           ],
         ),
       ),

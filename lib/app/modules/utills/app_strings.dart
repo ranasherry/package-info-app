@@ -1,11 +1,12 @@
 class AppStrings {
-  static const MAX_BANNER_ID = "ce341fcf87be42ce";
+  static const MAX_BANNER_ID = "1279fhahdudu";
+  // static const MAX_BANNER_ID = "ce341fcf87be42ce";
 
   static const MAX_INTER_ID = " 5dfacefcc6707437";
 
   static const MAX_APPOPEN_ID = "cd2e1ae37327c53d";
 
-  // static const MAX_MREC_ID = "f8b700a99";
+  static const MAX_MREC_ID = "5c2b8143f1bea030";
   // static const MAX_Reward_ID = "d08358dd380a18e9";
 
   static const MAX_SDK =

@@ -18,6 +18,7 @@ class JazzCall extends GetView<JazzCTL> {
         title: Text("Jazz & Warid Call Offer"),
         leading: GestureDetector(
             onTap: () {
+              AppLovinProvider.instance.showInterstitial();
               Get.back();
             },
             child: Icon(Icons.arrow_back_ios_outlined)),
