@@ -1,6 +1,8 @@
 import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:all_network_packages/app/modules/routes/app_pages.dart';
+import 'package:all_network_packages/app/modules/utills/app_strings.dart';
 import 'package:all_network_packages/app/modules/utills/size_config.dart';
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -146,6 +148,28 @@ class SubSimCheckerView extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+          ),
+          Container(
+            // color: Colors.amber,
+            child: Center(
+              child: MaxAdView(
+                  adUnitId: AppStrings.MAX_MREC_ID,
+                  adFormat: AdFormat.mrec,
+                  listener: AdViewAdListener(onAdLoadedCallback: (ad) {
+                    print('Mrec widget ad loaded from ' + ad.networkName);
+                  }, onAdLoadFailedCallback: (adUnitId, error) {
+                    print('Mrec widget ad failed to load with error code ' +
+                        error.code.toString() +
+                        ' and message: ' +
+                        error.message);
+                  }, onAdClickedCallback: (ad) {
+                    print('Mrec widget ad clicked');
+                  }, onAdExpandedCallback: (ad) {
+                    print('Mrec widget ad expanded');
+                  }, onAdCollapsedCallback: (ad) {
+                    print('Mrec widget ad collapsed');
+                  })),
             ),
           ),
         ],
