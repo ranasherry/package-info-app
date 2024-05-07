@@ -1,5 +1,8 @@
 class AppStrings {
+  // dummy banner id
   static const MAX_BANNER_ID = "1279fhahdudu";
+
+  // orignal banner id
   // static const MAX_BANNER_ID = "ce341fcf87be42ce";
 
   static const MAX_INTER_ID = " 5dfacefcc6707437";
