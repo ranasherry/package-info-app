@@ -19,6 +19,7 @@ class CnicCheckerView extends StatelessWidget {
         title: Text("CNIC Checker"),
         centerTitle: true,
       ),
+      body: MyWebViewWidget(controller: controller.myweb),
     );
   }
 }
