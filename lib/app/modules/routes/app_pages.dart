@@ -1,5 +1,6 @@
 import 'package:all_network_packages/app/modules/home/bindings/jazz_binding.dart';
 import 'package:all_network_packages/app/modules/home/bindings/settings_binding.dart';
+import 'package:all_network_packages/app/modules/sim_checker/binding/cnic_checker_binding.dart';
 import 'package:all_network_packages/app/modules/sim_checker/binding/sim_checker_binding.dart';
 import 'package:all_network_packages/app/modules/home/bindings/telenor_binding.dart';
 import 'package:all_network_packages/app/modules/home/bindings/ufone_binding.dart';
@@ -196,7 +197,7 @@ class AppPages {
     GetPage(
       name: _Paths.CNICCHECKERVIEW,
       page: () => CnicCheckerView(),
-      // binding:
+      binding: CnicCheckerBinding(),
     ),
   ];
 }
