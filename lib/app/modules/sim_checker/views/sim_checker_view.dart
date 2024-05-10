@@ -22,7 +22,13 @@ class SimCheckerView extends GetView<SimCheckerCTL> {
         title: Text("Sim Status"),
         centerTitle: true,
       ),
-      body: MyWebViewWidget(controller: controller.myweb),
+      body: Obx(() => controller.isLoaded.value
+          ? MyWebViewWidget(controller: controller.myweb)
+          : Container(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            )),
     );
   }
 }

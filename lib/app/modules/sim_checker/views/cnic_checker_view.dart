@@ -1,8 +1,10 @@
 import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
+import 'package:all_network_packages/app/modules/sim_checker/controller/cnic_checker_ctl.dart';
+import 'package:all_network_packages/app/modules/utills/helping_widets/my_webview_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CnicCheckerView extends StatelessWidget {
+class CnicCheckerView extends GetView<CnicCheckerCTL> {
   const CnicCheckerView({super.key});
 
   @override
@@ -19,6 +21,7 @@ class CnicCheckerView extends StatelessWidget {
         title: Text("CNIC Checker"),
         centerTitle: true,
       ),
+      body: MyWebViewWidget(controller: controller.myweb),
     );
   }
 }

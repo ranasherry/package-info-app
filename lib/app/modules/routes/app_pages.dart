@@ -1,51 +1,53 @@
-import 'package:all_network_packages/app/modules/home/bindings/jazz_binding.dart';
-import 'package:all_network_packages/app/modules/home/bindings/settings_binding.dart';
-import 'package:all_network_packages/app/modules/sim_checker/binding/cnic_checker_binding.dart';
-import 'package:all_network_packages/app/modules/sim_checker/binding/sim_checker_binding.dart';
-import 'package:all_network_packages/app/modules/home/bindings/telenor_binding.dart';
-import 'package:all_network_packages/app/modules/home/bindings/ufone_binding.dart';
-import 'package:all_network_packages/app/modules/home/bindings/warid_binding.dart';
-import 'package:all_network_packages/app/modules/home/bindings/zong_binding.dart';
-import 'package:all_network_packages/app/modules/home/views/jazz_call_offer.dart';
-import 'package:all_network_packages/app/modules/home/views/jazz_home_view.dart';
-import 'package:all_network_packages/app/modules/home/views/jazz_internet.dart';
-import 'package:all_network_packages/app/modules/home/views/jazz_other.dart';
-import 'package:all_network_packages/app/modules/home/views/jazz_sms.dart';
-import 'package:all_network_packages/app/modules/home/views/jazz_view_more.dart';
-import 'package:all_network_packages/app/modules/home/views/settings_view.dart';
-import 'package:all_network_packages/app/modules/sim_checker/views/cnic_checker_view.dart';
-import 'package:all_network_packages/app/modules/sim_checker/views/sim_checker_view.dart';
-import 'package:all_network_packages/app/modules/home/views/splash_screen.dart';
-import 'package:all_network_packages/app/modules/home/views/telenor_call.dart';
-import 'package:all_network_packages/app/modules/home/views/telenor_internet.dart';
-import 'package:all_network_packages/app/modules/home/views/telenor_other.dart';
-import 'package:all_network_packages/app/modules/home/views/telenor_sms.dart';
-import 'package:all_network_packages/app/modules/home/views/telenor_view_more.dart';
-import 'package:all_network_packages/app/modules/home/views/ufone_call.dart';
-import 'package:all_network_packages/app/modules/home/views/ufone_home_view.dart';
-import 'package:all_network_packages/app/modules/home/views/ufone_internet.dart';
-import 'package:all_network_packages/app/modules/home/views/ufone_other.dart';
-import 'package:all_network_packages/app/modules/home/views/ufone_sms.dart';
-import 'package:all_network_packages/app/modules/home/views/warid_call.dart';
-import 'package:all_network_packages/app/modules/home/views/warid_home_view.dart';
-import 'package:all_network_packages/app/modules/home/views/warid_internet.dart';
-import 'package:all_network_packages/app/modules/home/views/warid_sms.dart';
-import 'package:all_network_packages/app/modules/home/views/warid_view_more.dart';
-import 'package:all_network_packages/app/modules/home/views/zong_call.dart';
-import 'package:all_network_packages/app/modules/home/views/zong_home_view.dart';
-import 'package:all_network_packages/app/modules/home/views/zong_internet.dart';
-import 'package:all_network_packages/app/modules/home/views/zong_other.dart';
-import 'package:all_network_packages/app/modules/home/views/zong_sms.dart';
-import 'package:all_network_packages/app/modules/sim_checker/views/sub_sim_checker_view.dart';
 import 'package:get/get.dart';
 
 import '../home/bindings/home_view_binding.dart';
+import '../home/bindings/jazz_binding.dart';
+import '../home/bindings/settings_binding.dart';
 import '../home/bindings/splash_Screen_binding.dart';
+import '../home/bindings/telenor_binding.dart';
+import '../home/bindings/ufone_binding.dart';
+import '../home/bindings/warid_binding.dart';
+import '../home/bindings/zong_binding.dart';
 import '../home/views/home_view.dart';
+import '../home/views/jazz_call_offer.dart';
+import '../home/views/jazz_home_view.dart';
+import '../home/views/jazz_internet.dart';
+import '../home/views/jazz_other.dart';
+import '../home/views/jazz_sms.dart';
+import '../home/views/jazz_view_more.dart';
+import '../home/views/settings_view.dart';
+import '../home/views/splash_screen.dart';
+import '../home/views/telenor_call.dart';
 import '../home/views/telenor_home_view.dart';
+import '../home/views/telenor_internet.dart';
+import '../home/views/telenor_other.dart';
+import '../home/views/telenor_sms.dart';
+import '../home/views/telenor_view_more.dart';
+import '../home/views/ufone_call.dart';
+import '../home/views/ufone_home_view.dart';
+import '../home/views/ufone_internet.dart';
+import '../home/views/ufone_other.dart';
+import '../home/views/ufone_sms.dart';
 import '../home/views/ufone_view_more.dart';
+import '../home/views/warid_call.dart';
+import '../home/views/warid_home_view.dart';
+import '../home/views/warid_internet.dart';
 import '../home/views/warid_other.dart';
+import '../home/views/warid_sms.dart';
+import '../home/views/warid_view_more.dart';
+import '../home/views/zong_call.dart';
+import '../home/views/zong_home_view.dart';
+import '../home/views/zong_internet.dart';
+import '../home/views/zong_other.dart';
+import '../home/views/zong_sms.dart';
 import '../home/views/zong_view_more.dart';
+import '../location_finder/bindings/location_finder_binding.dart';
+import '../location_finder/views/location_finder_view.dart';
+import '../sim_checker/binding/cnic_checker_binding.dart';
+import '../sim_checker/binding/sim_checker_binding.dart';
+import '../sim_checker/views/cnic_checker_view.dart';
+import '../sim_checker/views/sim_checker_view.dart';
+import '../sim_checker/views/sub_sim_checker_view.dart';
 
 part 'app_routes.dart';
 
@@ -198,6 +200,11 @@ class AppPages {
       name: _Paths.CNICCHECKERVIEW,
       page: () => CnicCheckerView(),
       binding: CnicCheckerBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOCATION_FINDER,
+      page: () => LocationFinderView(),
+      binding: LocationFinderBinding(),
     ),
   ];
 }

@@ -147,6 +147,65 @@ class SubSimCheckerView extends StatelessWidget {
                     ),
                   ),
                 ),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(Routes.LOCATION_FINDER);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFFCADDEE),
+                      borderRadius: BorderRadius.circular(
+                          SizeConfig.blockSizeHorizontal * 3),
+                      border: Border.all(color: Colors.blue),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black, // Shadow color
+                          spreadRadius: 2, // Spread radius
+                          blurRadius: 10, // Blur radius
+                          offset: Offset(0, 5), // Offset in x and y direction
+                        ),
+                      ],
+                    ),
+                    margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 2),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.credit_card_rounded,
+                          color: Colors.blue,
+                          size: SizeConfig.blockSizeHorizontal * 8,
+                        ),
+                        Text(
+                          'Sim Location Finder',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: SizeConfig.blockSizeHorizontal * 4,
+                          ),
+                        ),
+                        Container(
+                          height: SizeConfig.blockSizeVertical * 3.5,
+                          width: SizeConfig.blockSizeHorizontal * 25,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.blue),
+                            borderRadius: BorderRadius.circular(
+                                SizeConfig.blockSizeHorizontal * 7),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Click Here",
+                              style: TextStyle(
+                                  fontSize:
+                                      SizeConfig.blockSizeHorizontal * 2.5,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue.shade700),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
