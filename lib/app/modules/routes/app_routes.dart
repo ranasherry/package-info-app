@@ -38,6 +38,7 @@ abstract class Routes {
   static const SETTINGSVIEW = _Paths.SETTINGSVIEW;
   static const SUBSIMCHECKERVIEW = _Paths.SUBSIMCHECKERVIEW;
   static const CNICCHECKERVIEW = _Paths.CNICCHECKERVIEW;
+  static const LOCATION_FINDER = _Paths.LOCATION_FINDER;
 }
 
 abstract class _Paths {
@@ -77,4 +78,5 @@ abstract class _Paths {
   static const SETTINGSVIEW = '/SETTINGSVIEW';
   static const SUBSIMCHECKERVIEW = '/SUBSIMCHECKERVIEW';
   static const CNICCHECKERVIEW = '/CNICCHECKERVIEW';
+  static const LOCATION_FINDER = '/location-finder';
 }
