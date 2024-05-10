@@ -1,5 +1,6 @@
 import 'package:all_network_packages/app/modules/data/mobile_packages_model.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class JazzCTL extends GetxController {
@@ -570,5 +571,9 @@ class JazzCTL extends GetxController {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  void jazzSharePackage(MobilePackages value) {
+    // Share.share();
   }
 }

@@ -191,25 +191,51 @@ class UfoneViewMore extends GetView<UfoneCTL> {
                         ],
                       ),
                       Divider(),
-                      GestureDetector(
-                        onTap: () {
-                          controller.packageActivation();
-                        },
-                        child: Container(
-                          margin: EdgeInsets.only(
-                              top: SizeConfig.blockSizeVertical * 1),
-                          height: SizeConfig.blockSizeVertical * 7,
-                          width: SizeConfig.blockSizeHorizontal * 80,
-                          decoration: BoxDecoration(
-                              color: Color(0xFFF25500),
-                              borderRadius: BorderRadius.circular(
-                                  SizeConfig.blockSizeHorizontal * 3)),
-                          child: Center(
-                              child: Text(
-                            "Activate",
-                            style: TextStyle(color: Colors.white),
-                          )),
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              controller.ufoneSharePackage(
+                                  controller.currentPackage.value);
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  top: SizeConfig.blockSizeVertical * 1),
+                              height: SizeConfig.blockSizeVertical * 6,
+                              width: SizeConfig.blockSizeHorizontal * 40,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFF25500),
+                                  borderRadius: BorderRadius.circular(
+                                      SizeConfig.blockSizeHorizontal * 3)),
+                              child: Center(
+                                  child: Text(
+                                "Share",
+                                style: TextStyle(color: Colors.white),
+                              )),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              controller.packageActivation();
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  top: SizeConfig.blockSizeVertical * 1),
+                              height: SizeConfig.blockSizeVertical * 6,
+                              width: SizeConfig.blockSizeHorizontal * 40,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFF25500),
+                                  borderRadius: BorderRadius.circular(
+                                      SizeConfig.blockSizeHorizontal * 3)),
+                              child: Center(
+                                  child: Text(
+                                "Activate",
+                                style: TextStyle(color: Colors.white),
+                              )),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

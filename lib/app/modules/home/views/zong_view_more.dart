@@ -3,6 +3,7 @@ import 'package:all_network_packages/app/modules/home/controllers/zong_ctl.dart'
 import 'package:all_network_packages/app/modules/utills/app_strings.dart';
 import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 import '../../utills/size_config.dart';
@@ -190,25 +191,51 @@ class ZongViewMore extends GetView<ZongCTL> {
                         ],
                       ),
                       Divider(),
-                      GestureDetector(
-                        onTap: () {
-                          controller.packageActivation();
-                        },
-                        child: Container(
-                          margin: EdgeInsets.only(
-                              top: SizeConfig.blockSizeVertical * 1),
-                          height: SizeConfig.blockSizeVertical * 7,
-                          width: SizeConfig.blockSizeHorizontal * 80,
-                          decoration: BoxDecoration(
-                              color: Color(0xFF80B72F),
-                              borderRadius: BorderRadius.circular(
-                                  SizeConfig.blockSizeHorizontal * 3)),
-                          child: Center(
-                              child: Text(
-                            "Activate",
-                            style: TextStyle(color: Colors.white),
-                          )),
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              controller.zongSharePackage(
+                                  controller.currentPackage.value);
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  top: SizeConfig.blockSizeVertical * 1),
+                              height: SizeConfig.blockSizeVertical * 6,
+                              width: SizeConfig.blockSizeHorizontal * 40,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFF80B72F),
+                                  borderRadius: BorderRadius.circular(
+                                      SizeConfig.blockSizeHorizontal * 3)),
+                              child: Center(
+                                  child: Text(
+                                "Share",
+                                style: TextStyle(color: Colors.white),
+                              )),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              controller.packageActivation();
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                  top: SizeConfig.blockSizeVertical * 1),
+                              height: SizeConfig.blockSizeVertical * 6,
+                              width: SizeConfig.blockSizeHorizontal * 40,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFF80B72F),
+                                  borderRadius: BorderRadius.circular(
+                                      SizeConfig.blockSizeHorizontal * 3)),
+                              child: Center(
+                                  child: Text(
+                                "Activate",
+                                style: TextStyle(color: Colors.white),
+                              )),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

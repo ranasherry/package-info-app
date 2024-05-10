@@ -1,5 +1,6 @@
 import 'package:all_network_packages/app/modules/data/mobile_packages_model.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ZongCTL extends GetxController {
@@ -846,5 +847,9 @@ class ZongCTL extends GetxController {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  void zongSharePackage(MobilePackages value) {
+    // Share.share();
   }
 }

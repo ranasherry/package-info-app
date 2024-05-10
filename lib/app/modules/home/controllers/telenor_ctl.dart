@@ -1,5 +1,6 @@
 import 'package:all_network_packages/app/modules/data/mobile_packages_model.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class TelenorCTL extends GetxController {
@@ -714,5 +715,9 @@ class TelenorCTL extends GetxController {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  void telenorSharePackage(MobilePackages value) {
+    // Share.share();
   }
 }

@@ -1,5 +1,6 @@
 import 'package:all_network_packages/app/modules/data/mobile_packages_model.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UfoneCTL extends GetxController {
@@ -702,5 +703,9 @@ class UfoneCTL extends GetxController {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  void ufoneSharePackage(MobilePackages value) {
+    // Share.share();
   }
 }
