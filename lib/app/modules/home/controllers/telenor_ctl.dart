@@ -1,4 +1,5 @@
 import 'package:all_network_packages/app/modules/data/mobile_packages_model.dart';
+import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:get/get.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -717,7 +718,24 @@ class TelenorCTL extends GetxController {
     }
   }
 
-  void telenorSharePackage(MobilePackages value) {
+  Future<void> telenorSharePackage(MobilePackages value) async {
     // Share.share();
+
+      String packageDetails = '''Package Name: ${value.bundle} 
+  Valid for: ${value.validity}
+  Onnet: ${value.onnet} minutes
+  Offnet: ${value.offnet} minutes
+  SMS: ${value.sms} messages
+  Mbs: ${value.internet}
+  Price: ${value.rs}/-
+  Activation Code: ${value.activation}
+  De-activation Code: ${value.deactivation}
+   ''';
+    ShareResult result = await Share.shareWithResult(packageDetails);
+    if (result.status == ShareResultStatus.success) {
+      AppLovinProvider.instance.showInterstitial();
+    }
+
+    
   }
 }

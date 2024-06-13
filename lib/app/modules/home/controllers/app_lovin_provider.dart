@@ -33,9 +33,9 @@ class AppLovinProvider {
   var isWidgetMRecShowing = false;
 
   void init() {
-    if (kReleaseMode) {
-      initializePlugin();
-    }
+    // if (kReleaseMode) {
+    initializePlugin();
+    // }
   }
 
   Future<void> initializePlugin() async {
@@ -48,8 +48,8 @@ class AppLovinProvider {
       print("SDK Initialized: $configuration");
       AppLovinMAX.setVerboseLogging(false);
 
-      attachAdListeners();
-      AppLovinMAX.loadInterstitial(_interstitial_ad_unit_id);
+      // attachAdListeners();
+      // AppLovinMAX.loadInterstitial(_interstitial_ad_unit_id);
       //  AppLovinMAX.createMRec(AppStrings.MAX_MREC_ID, AdViewPosition.centered);
       // AppLovinMAX.createBanner(
       //     AppStrings.MAX_BANNER_ID, AdViewPosition.bottomCenter);
