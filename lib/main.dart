@@ -1,4 +1,5 @@
 import 'package:all_network_packages/app/notificationservice/local_notification_service.dart';
+import 'package:all_network_packages/app/services/remote_config_services.dart';
 import 'package:all_network_packages/firebase_options.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -41,6 +42,7 @@ void main() async {
     DeviceOrientation.portraitUp,
     // DeviceOrientation.landscapeRight,
   ]);
+  RemoteConfigService().initialize();
 
   runApp(const MyApp());
 }

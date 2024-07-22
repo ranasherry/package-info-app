@@ -100,6 +100,6 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.21"
-    implementation 'com.applovin:applovin-sdk:+'
+    // implementation 'com.applovin:applovin-sdk:+'
     implementation 'com.applovin.mediation:facebook-adapter:+'
 }

@@ -119,22 +119,25 @@ class AppLovinProvider {
     ));
 
     /// Banner Ad Listeners
-    AppLovinMAX.setBannerListener(AdViewAdListener(onAdLoadedCallback: (ad) {
-      print('Banner ad loaded from ' + ad.networkName);
-      AppLovinMAX.showBanner(AppStrings.MAX_BANNER_ID);
-    }, onAdLoadFailedCallback: (adUnitId, error) {
-      print('Banner ad failed to load with error code ' +
-          error.code.toString() +
-          ' and message: ' +
-          error.message);
-    }, onAdClickedCallback: (ad) {
-      print('Banner ad clicked');
-    }, onAdExpandedCallback: (ad) {
-      print('Banner ad expanded');
-    }, onAdCollapsedCallback: (ad) {
-      print('Banner ad collapsed');
-    }));
+    /// Commented By Jamal Start ///
+    ///
+    // AppLovinMAX.setBannerListener(AdViewAdListener(onAdLoadedCallback: (ad) {
+    //   print('Banner ad loaded from ' + ad.networkName);
+    //   AppLovinMAX.showBanner(AppStrings.MAX_BANNER_ID);
+    // }, onAdLoadFailedCallback: (adUnitId, error) {
+    //   print('Banner ad failed to load with error code ' +
+    //       error.code.toString() +
+    //       ' and message: ' +
+    //       error.message);
+    // }, onAdClickedCallback: (ad) {
+    //   print('Banner ad clicked');
+    // }, onAdExpandedCallback: (ad) {
+    //   print('Banner ad expanded');
+    // }, onAdCollapsedCallback: (ad) {
+    //   print('Banner ad collapsed');
+    // }));
 
+    /// Commented By Jamal end ///
     /// MREC Ad Listeners
     AppLovinMAX.setMRecListener(AdViewAdListener(onAdLoadedCallback: (ad) {
       print('MREC ad loaded from ' + ad.networkName);

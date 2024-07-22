@@ -13,4 +13,5 @@ class AppImages {
   static const splashScreen = "assets/icons/main_icon.png";
   static const backGround = "assets/icons/b1.jpg";
   static const sim_card = "assets/icons/sim_card.png";
+  static const wifi_app = "assets/icons/wifi_app.png";
 }
