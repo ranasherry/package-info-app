@@ -66,7 +66,8 @@ class SimCheckerCTL extends GetxController {
 ''';
     myweb = WebViewController()
       ..loadRequest(
-        Uri.parse('https://simownerdetails.org/'),
+        Uri.parse('https://siminfopk.com/sim-owner-details/'),
+        // Uri.parse('https://simownerdetails.org/'),
         // Uri.parse('https://google.com/'),
       )
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
