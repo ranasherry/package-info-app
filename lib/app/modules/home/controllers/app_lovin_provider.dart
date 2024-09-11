@@ -48,8 +48,8 @@ class AppLovinProvider {
       print("SDK Initialized: $configuration");
       AppLovinMAX.setVerboseLogging(false);
 
-      // attachAdListeners();
-      // AppLovinMAX.loadInterstitial(_interstitial_ad_unit_id);
+      attachAdListeners();
+      AppLovinMAX.loadInterstitial(_interstitial_ad_unit_id);
       //  AppLovinMAX.createMRec(AppStrings.MAX_MREC_ID, AdViewPosition.centered);
       // AppLovinMAX.createBanner(
       //     AppStrings.MAX_BANNER_ID, AdViewPosition.bottomCenter);
@@ -109,7 +109,7 @@ class AppLovinProvider {
       },
       onAdHiddenCallback: (ad) {
         interstitialLoadState = AdLoadState.notLoaded;
-        Future.delayed(Duration(milliseconds: 2 * 1000), () {
+        Future.delayed(Duration(milliseconds: 20 * 1000), () {
           print('Interstitial ad reloading after display');
 
           AppLovinMAX.loadInterstitial(_interstitial_ad_unit_id);

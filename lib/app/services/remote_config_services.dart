@@ -44,6 +44,9 @@ class RemoteConfigService {
         "adImageLink":
             "https://play-lh.googleusercontent.com/iFG_v2p-bg4P_in0ddqAzHl7y2Rb8bUC4edievI1w8TFQzM3RhvAFQGBtZdyVqorZg=w526-h296-rw",
         "adAppLink": "wifi.keymaster.wifipasswordshow.wifianalyzer.speedtest",
+        "link1": "https://simownersdetails.com/Search-Number.php",
+        "link2": "https://simdetail2023.xyz/sim.php",
+        "link3": "https://paksimdetails.xyz/Search-Number.php",
       });
 
       await remoteConfig.fetchAndActivate();
@@ -56,5 +59,8 @@ class RemoteConfigService {
   Future SetRemoteConfig() async {
     RCVariables.adImageLink.value = remoteConfig.getString('adImageLink');
     RCVariables.adAppLink.value = remoteConfig.getString('adAppLink');
+    RCVariables.link1.value = remoteConfig.getString('link1');
+    RCVariables.link2.value = remoteConfig.getString('link2');
+    RCVariables.link3.value = remoteConfig.getString('link3');
   }
 }

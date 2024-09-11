@@ -42,6 +42,7 @@ void main() async {
     DeviceOrientation.portraitUp,
     // DeviceOrientation.landscapeRight,
   ]);
+
   RemoteConfigService().initialize();
 
   runApp(const MyApp());
