@@ -1,6 +1,7 @@
 import 'package:all_network_packages/app/modules/home/controllers/app_lovin_provider.dart';
 import 'package:all_network_packages/app/modules/routes/app_pages.dart';
 import 'package:all_network_packages/app/modules/utills/app_strings.dart';
+import 'package:all_network_packages/app/modules/utills/remoteConfigVariables.dart';
 import 'package:all_network_packages/app/modules/utills/size_config.dart';
 import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,8 @@ class SubSimCheckerView extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Get.toNamed(Routes.SIMCHECKERVIEW);
+                    Get.toNamed(Routes.SIMCHECKERVIEW,
+                        arguments: RCVariables.link1.value);
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -59,7 +61,7 @@ class SubSimCheckerView extends StatelessWidget {
                           size: SizeConfig.blockSizeHorizontal * 8,
                         ),
                         Text(
-                          'SIM Checker',
+                          'SIM Checker 1',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: SizeConfig.blockSizeHorizontal * 4,
@@ -90,7 +92,8 @@ class SubSimCheckerView extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.toNamed(Routes.CNICCHECKERVIEW);
+                    Get.toNamed(Routes.SIMCHECKERVIEW,
+                        arguments: RCVariables.link2.value);
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -112,12 +115,12 @@ class SubSimCheckerView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Icon(
-                          Icons.credit_card_rounded,
+                          Icons.sim_card_outlined,
                           color: Colors.blue,
                           size: SizeConfig.blockSizeHorizontal * 8,
                         ),
                         Text(
-                          'CNIC Checker',
+                          'SIM Checker 2',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: SizeConfig.blockSizeHorizontal * 4,
@@ -127,11 +130,10 @@ class SubSimCheckerView extends StatelessWidget {
                           height: SizeConfig.blockSizeVertical * 3.5,
                           width: SizeConfig.blockSizeHorizontal * 25,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: Colors.blue),
-                            borderRadius: BorderRadius.circular(
-                                SizeConfig.blockSizeHorizontal * 7),
-                          ),
+                              color: Colors.white,
+                              border: Border.all(color: Colors.blue),
+                              borderRadius: BorderRadius.circular(
+                                  SizeConfig.blockSizeHorizontal * 7)),
                           child: Center(
                             child: Text(
                               "Click Here",
@@ -147,6 +149,125 @@ class SubSimCheckerView extends StatelessWidget {
                     ),
                   ),
                 ),
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(Routes.SIMCHECKERVIEW,
+                        arguments: RCVariables.link3.value);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFFCADDEE),
+                      borderRadius: BorderRadius.circular(
+                          SizeConfig.blockSizeHorizontal * 3),
+                      border: Border.all(color: Colors.blue),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black, // Shadow color
+                          spreadRadius: 2, // Spread radius
+                          blurRadius: 10, // Blur radius
+                          offset: Offset(0, 5), // Offset in x and y direction
+                        ),
+                      ],
+                    ),
+                    margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 2),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.sim_card_outlined,
+                          color: Colors.blue,
+                          size: SizeConfig.blockSizeHorizontal * 8,
+                        ),
+                        Text(
+                          'SIM Checker 3',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: SizeConfig.blockSizeHorizontal * 4,
+                          ),
+                        ),
+                        Container(
+                          height: SizeConfig.blockSizeVertical * 3.5,
+                          width: SizeConfig.blockSizeHorizontal * 25,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(color: Colors.blue),
+                              borderRadius: BorderRadius.circular(
+                                  SizeConfig.blockSizeHorizontal * 7)),
+                          child: Center(
+                            child: Text(
+                              "Click Here",
+                              style: TextStyle(
+                                  fontSize:
+                                      SizeConfig.blockSizeHorizontal * 2.5,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blue.shade700),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                // GestureDetector(
+                //   onTap: () {
+                //     Get.toNamed(Routes.CNICCHECKERVIEW);
+                //   },
+                //   child: Container(
+                //     decoration: BoxDecoration(
+                //       color: Color(0xFFCADDEE),
+                //       borderRadius: BorderRadius.circular(
+                //           SizeConfig.blockSizeHorizontal * 3),
+                //       border: Border.all(color: Colors.blue),
+                //       boxShadow: [
+                //         BoxShadow(
+                //           color: Colors.black, // Shadow color
+                //           spreadRadius: 2, // Spread radius
+                //           blurRadius: 10, // Blur radius
+                //           offset: Offset(0, 5), // Offset in x and y direction
+                //         ),
+                //       ],
+                //     ),
+                //     margin: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 2),
+                //     child: Column(
+                //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                //       children: [
+                //         Icon(
+                //           Icons.credit_card_rounded,
+                //           color: Colors.blue,
+                //           size: SizeConfig.blockSizeHorizontal * 8,
+                //         ),
+                //         Text(
+                //           'CNIC Checker',
+                //           style: TextStyle(
+                //             color: Colors.black,
+                //             fontSize: SizeConfig.blockSizeHorizontal * 4,
+                //           ),
+                //         ),
+                //         Container(
+                //           height: SizeConfig.blockSizeVertical * 3.5,
+                //           width: SizeConfig.blockSizeHorizontal * 25,
+                //           decoration: BoxDecoration(
+                //             color: Colors.white,
+                //             border: Border.all(color: Colors.blue),
+                //             borderRadius: BorderRadius.circular(
+                //                 SizeConfig.blockSizeHorizontal * 7),
+                //           ),
+                //           child: Center(
+                //             child: Text(
+                //               "Click Here",
+                //               style: TextStyle(
+                //                   fontSize:
+                //                       SizeConfig.blockSizeHorizontal * 2.5,
+                //                   fontWeight: FontWeight.bold,
+                //                   color: Colors.blue.shade700),
+                //             ),
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
+
                 // GestureDetector(
                 //   onTap: () {
                 //     Get.toNamed(Routes.LOCATION_FINDER);
